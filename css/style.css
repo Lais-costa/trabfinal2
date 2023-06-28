@@ -1,0 +1,160 @@
+body{
+    background-color: rgb(72, 118, 83);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    
+    
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#title{
+    flex-direction: column;
+    line-height: 5px;
+}
+
+li{
+    display: inline-block;
+    margin: 20px;
+}
+
+a{
+    color: rgb(253, 254, 254);
+}
+
+a:hover{
+    color: rgb(138, 205, 148);
+    transition: 0.3s all;
+}
+
+h1{
+    font-weight: 200;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+h2, h4{
+    font-size: 56px;
+    line-height: 10px;
+    font-family: 'Poppins', sans-serif
+    
+}
+
+span{
+    color: rgb(255, 255, 255);
+}
+
+p{
+    line-height: 20px;
+    max-width: 500px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+h3{
+    color: rgb(72, 118, 83);
+    font-size: 20px;
+}
+
+
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+    padding: 30px;
+    margin: 20px;
+    width: 400px;
+    transition: all 0.3s ease-out;
+    background-color: #ffffff;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+   
+  .card p {
+    color: rgb(72, 118, 83);
+    font-size: 16px;
+  }
+   
+  .image {
+    float: right;
+    max-width: 64px;
+    max-height: 64px;
+  }
+
+
+.container{
+   background-color:rgb(138, 205, 148);
+   border-radius: 15px;
+   color:rgb(72, 118, 83);
+   margin: auto;
+}
+
+footer{
+    width: 100%;
+    color: var(--color-neutral-40);
+    background-color: rgb(138, 205, 148);
+    border-radius: 20px;
+}
+
+#footer_content{
+    background-color: var(--color-neutral-10);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem 3.5rem;
+}
+
+#footer_contatos h1 {
+   margin-bottom: 0.75rem;
+}
+
+#footer_social_media{
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    border-radius: 20px;
+}
+
+#footer_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer_social_media .footer_link{
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 20px;
+}
+
+#instagram{
+    background: transparent;
+    left: 30px;
+}
+
+#footer_copyright{
+    margin-left: 50px;
+}

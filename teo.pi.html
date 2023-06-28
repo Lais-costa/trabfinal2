@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css2/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css2/teo.css">
+    <title>Teorema de Pitágoras</title>
+</head>
+<body background="img/pngwing.com (4).png">
+  <header>
+    <div id="title">
+        <h1>CalcMath</h1>
+        <h5>Soluções de cálculos artiméticos </h5>
+    </div>
+
+    <ul>
+        <a href="teo.pi.html"><li>Teorema de Pitágoras</li></a>
+        <a href="matriz.html"><li>Matrizes</li></a>
+        <a href="estatistica.html"><li>Estatístitca</li></a>
+        <a href="equa.html"><li>Equação do 2º grau</li></a>
+        <a href="areaspla.html"><li>Áreas Planas</li></a>
+    </ul>
+</header>
+
+<script>
+  
+    function calcularHipotenusa() {
+      var cateto1 = parseFloat(document.getElementById("cateto1").value);
+      var cateto2 = parseFloat(document.getElementById("cateto2").value);
+
+      var hipotenusa = Math.sqrt(cateto1 * cateto1 + cateto2 * cateto2);
+
+      exibirResultado(hipotenusa);
+    }
+
+    function exibirResultado(hipotenusa) {
+      var resultadoElement = document.getElementById("resultado");
+      resultadoElement.innerHTML = "";
+
+      var resultLabel = document.createElement("p");
+      resultLabel.classList.add("result-label");
+      resultLabel.textContent = "Hipotenusa: " + hipotenusa.toFixed(2);
+
+      resultadoElement.appendChild(resultLabel);
+    }
+  
+</script>
+
+<div class="container">
+  <a href="index.html" id="link">Home</a> <br>
+  <br>
+  <h1>Teorema de Pitágoras</h1>
+   "O teorema de Pitágoras é uma relação entre as medidas dos lados de um triângulo retângulo. De acordo com esse teorema, o quadrado da medida da hipotenusa é igual à soma dos quadrados das medidas dos catetos. Ou seja, se os catetos medem a e b e a hipotenusa mede c, então c2=a2+b2.
+    Podemos utilizar essa relação para obter a medida de um dos lados do triângulo retângulo, supondo que os outros dois sejam conhecidos. Ainda que tal aplicação seja simples, o teorema de Pitágoras é um recurso fundamental em diversos campos da Matemática, sendo amplamente estudado durante séculos. " Em um triângulo retângulo, os catetos são os lados que formam o ângulo reto e hipotenusa é o lado oposto ao ângulo reto. 
+    Considere um triângulo retângulo em que os catetos medem a e b e a hipotenusa mede c. O teorema de Pitágoras determina que o quadrado da medida da hipotenusa(c²) é igual à soma dos quadrados das medidas dos catetos a² + b². Portanto, a fórmula do teorema de Pitágoras é c²=a²+b².
+
+    <br><div id="image">
+      <img src="img/pngwing.com (5).png" alt="teo" width="200px" height="200px">
+      </div>
+    
+    A hipotenusa é o maior lado de um triângulo retângulo e o lado oposto ao ângulo reto. Os outros dois lados são os catetos. O ângulo formado por esses dois lados tem medida igual a 90º (ângulo reto). <br>
+ Identificamos ainda os catetos, de acordo com um ângulo de referência. Ou seja, o cateto poderá ser chamado de cateto adjacente ou cateto oposto.
+  Quando o cateto está junto ao ângulo de referência, é chamado de adjacente, por outro lado, se está contrário a este ângulo, é chamado de oposto.
+
+
+  <br> <p>
+    Aqui está a nossa calculadora do teorema de pitágoras:
+  </p>
+
+  <h1>Calculadora do Teorema de Pitagoras</h1>
+  <label for="cateto1" class="input-label">Cateto 1:</label>
+<div class="input">
+  <input type="number" id="cateto1">
+</div>
+
+<label for="cateto2" class="input-label">Cateto 2:</label>
+<div class="input">
+  <input type="number" id="cateto2">
+</div>
+
+<div id="btn">
+  <button onclick="calcularHipotenusa()">Calcular</button>
+</div>
+  <br><div id="resultado"></div>
+</div>
+
+</div>
+</body>
+</html>
+
+
+

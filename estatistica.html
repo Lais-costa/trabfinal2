@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css2/styles.css">
+    <link rel="stylesheet" href="css2/estatistica.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Estatística</title>
+</head>
+<body background="img/pngwing.com (4).png">
+        <header>
+          <div id="title">
+              <h1>CalcMath</h1>
+              <h5>Soluções de cálculos artiméticos </h5>
+          </div>
+      
+          <ul>
+              <a href="teo.pi.html"><li>Teorema de Pitágoras</li></a>
+              <a href="matriz.html"><li>Matrizes</li></a>
+              <a href="estatistica.html"><li>Estatístitca</li></a>
+              <a href="equa.html"><li>Equação do 2º grau</li></a>
+              <a href="areaspla.html"><li>Áreas Planas</li></a>
+          </ul>
+      </header>
+      <script>
+    function resolverProblema() {
+        var valores = document.getElementById("valores").value;
+        var valoresArray = valores.split(",").map(Number);
+  
+        var soma = valoresArray.reduce((total, valor) => total + valor, 0);
+        var media = soma / valoresArray.length;
+  
+        var diferencaQuadrados = valoresArray.map(valor => Math.pow(valor - media, 2));
+        var somaDiferencaQuadrados = diferencaQuadrados.reduce((total, valor) => total + valor, 0);
+        var variancia = somaDiferencaQuadrados / valoresArray.length;
+        var desvioPadrao = Math.sqrt(variancia);
+  
+        exibirResultado(media, variancia, desvioPadrao);
+      }
+  
+      function exibirResultado(media, variancia, desvioPadrao) {
+        var resultadoContainer = document.getElementById("resultado-container");
+        resultadoContainer.innerHTML = "";
+  
+        var mediaLabel = document.createElement("p");
+        mediaLabel.classList.add("result-label");
+        mediaLabel.textContent = "Média: " + media.toFixed(2);
+  
+        var varianciaLabel = document.createElement("p");
+        varianciaLabel.classList.add("result-label");
+        varianciaLabel.textContent = "Variância: " + variancia.toFixed(2);
+  
+        var desvioPadraoLabel = document.createElement("p");
+        desvioPadraoLabel.classList.add("result-label");
+        desvioPadraoLabel.textContent = "Desvio Padrão: " + desvioPadrao.toFixed(2);
+  
+        resultadoContainer.appendChild(mediaLabel);
+        resultadoContainer.appendChild(varianciaLabel);
+        resultadoContainer.appendChild(desvioPadraoLabel);
+      }
+    </script>
+
+    <div class="container">
+      <a href="index.html" id="link">Home</a> <br>
+      <br>
+
+    <p> <h3>Estatística</h3>
+        Estatística é uma ciência que estuda a coleta, a organização, a análise e registro de dados por amostras.
+        Utilizada desde a Antiguidade, quando se registravam os nascimentos e as mortes das pessoas, é um método de pesquisa fundamental para tomar decisões. Isso porque fundamenta suas conclusões nos estudos realizados.
+
+       <h3>Média Aritmética</h3>
+        A Média Aritmética de um conjunto de dados é obtida somando todos os valores e dividindo o valor encontrado pelo número de dados desse conjunto.É muito utilizada em estatística como uma medida de tendência central.
+        Pode ser simples, onde todos os valores possuem a mesma importância, ou ponderada, quando considera pesos diferentes aos dados.
+
+        <h3>Variância e Desvio Padrão</h3>
+       
+            Variância e desvio padrão são medidas de dispersão, ou seja, parâmetros utilizados na Estatística para calcular o quanto os dados de um conjunto de valores podem variar.
+            A variância (V) é útil para determinar o afastamento da média que os dados de um conjunto analisado apresentam. Para isso, determina-se o valor médio das diferenças quadradas da média.
+            O desvio padrão (DP) é calculado a partir da variância, pois é a raiz quadrada desse parâmetro.
+        
+    </p>
+      <div class="image">
+      <img src="img/pngegg (1).png" alt="estat" width="200px" height="200px">
+      </div>
+    </div>
+
+
+    <div class="container">
+      <h1>Resolução de Problema de Estatística</h1>
+
+      <label for="valores" class="input-label">Digite os valores separados por vírgula:</label>
+       <div class="input">
+      <input type="text" id="valores">
+    </div>
+     
+    <div id="btn">
+      <button onclick="resolverProblema()">Resolver</button>
+    </div>
+
+      <br><div id="resultado-container" class="result-container"></div>
+    
+    </div>
+
+
+</body>
+</html>

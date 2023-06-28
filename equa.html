@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css2/styles.css">
+    <link rel="stylesheet" href="css2/equa.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Equação do 2º grau</title>
+</head>
+<body background="img/pngwing.com (4).png">
+        <header>
+          <div id="title">
+              <h1>CalcMath</h1>
+              <h5>Soluções de cálculos artiméticos </h5>
+          </div>
+      
+          <ul>
+              <a href="teo.pi.html"><li>Teorema de Pitágoras</li></a>
+              <a href="matriz.html"><li>Matrizes</li></a>
+              <a href="estatistica.html"><li>Estatístitca</li></a>
+              <a href="equa.html"><li>Equação do 2º grau</li></a>
+              <a href="areaspla.html"><li>Áreas Planas</li></a>
+          </ul>
+      </header>
+      <script>
+        function resolverEquacao() {
+          var a = parseFloat(document.getElementById("coeficienteA").value);
+          var b = parseFloat(document.getElementById("coeficienteB").value);
+          var c = parseFloat(document.getElementById("coeficienteC").value);
+    
+          var discriminante = b * b - 4 * a * c;
+          var solucao1, solucao2;
+    
+          if (discriminante > 0) {
+            solucao1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+            solucao2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+            exibirResultado("Duas raízes reais diferentes: x1 = " + solucao1.toFixed(2) + ", x2 = " + solucao2.toFixed(2));
+          } else if (discriminante === 0) {
+            solucao1 = -b / (2 * a);
+            exibirResultado("Uma raiz real: x = " + solucao1.toFixed(2));
+          } else {
+            exibirResultado("Não existem raízes reais.");
+          }
+        }
+    
+        function exibirResultado(resultado) {
+          var resultadoElement = document.getElementById("resultado");
+          resultadoElement.innerHTML = "";
+    
+          var resultadoLabel = document.createElement("p");
+          resultadoLabel.classList.add("result-label");
+          resultadoLabel.textContent = resultado;
+    
+          resultadoElement.appendChild(resultadoLabel);
+        }
+      </script>
+    </head>
+
+
+    
+    
+      <div class="container">
+        <a href="index.html" id="link">Home</a> <br>
+        <br>
+        <h1>Equação do 2° Grau</h1>
+        
+          "A equação do 2º grau é caracterizada por um polinômio de grau 2, ou seja, um polinômio do tipo ax2+bx+c, em que a, b e c são números reais. Ao resolvermos uma equação de grau 2, estamos interessados em encontrar valores para a incógnita x que torne o valor da expressão igual a 0, que são chamadas de raízes, isto é, ax² + bx + c = 0."
+
+
+          "A solução de uma equação do 2º grau ocorre, quando as raízes são encontradas, ou seja, os valores atribuídos a x . Esses valores de x devem tornar a igualdade verdadeira, isto é, ao substituir o valor de x na expressão, o resultado deve ser igual a 0."
+          "Considerando a equação x2 – 1 = 0 temos que x’ = 1 e x’’ = – 1 são soluções da equação, pois substituindo esses valores na expressão, temos uma igualdade verdadeira. Veja: 
+        <br>  x2 – 1 = 0 
+        <br>
+         <br> (1)2 – 1 = 0 e (–1)2 – 1 = 0
+
+ <br>
+        <br> Para encontrar a solução de uma equação, é preciso analisar se a equação é completa e incompleta e selecionar qual método será utilizado.
+         Quando uma equação do segundo grau é completa, usamos a Fórmula de Bhaskara para encontrar as raízes da equação.
+        
+        Fórmula do Delta
+        Na fórmula de Bhaskara, aparece a letra grega Δ (delta), chamada discriminante da equação, pois conforme o seu valor é possível saber qual o número de raízes (soluções) que a equação terá.
+        
+        Para determinar o delta usamos a seguinte fórmula:
+       
+        <div id="image">
+         <img src="img/pngwing.com (2).png" alt="equa" width="200px" height="200px">
+        </div>
+
+      <p> Aqui está nossa calculadora de equação do 2° grau:</p>
+      <br>
+
+        <h1>Calculadora de Equação do Segundo Grau</h1>
+        <label for="coeficienteA" class="input-label">Coeficiente A:</label>
+        <div class="input">
+        <input type="number" id="coeficienteA">
+      </div>
+        <label for="coeficienteB" class="input-label">Coeficiente B:</label>
+        <div class="input">
+        <input type="number" id="coeficienteB">
+      </div>
+        <label for="coeficienteC" class="input-label">Coeficiente C:</label>
+        <div class="input">
+        <input type="number" id="coeficienteC">
+      </div>
+
+      <div id="btn">
+        <button onclick="resolverEquacao()">Calcular</button>
+      </div>
+      <br>
+        <div id="resultado"></div>
+      </div>
+
+</body>
+</html>

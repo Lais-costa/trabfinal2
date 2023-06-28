@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css2/styles.css">
+    <link rel="stylesheet" href="css2/matriz.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Matrizes</title>
+</head>
+<body background="img/pngwing.com (4).png">
+        <header>
+          <div id="title">
+              <h1>CalcMath</h1>
+              <h5>Soluções de cálculos artiméticos </h5>
+          </div>
+      
+          <ul>
+              <a href="teo.pi.html"><li>Teorema de Pitágoras</li></a>
+              <a href="matriz.html"><li>Matrizes</li></a>
+              <a href="estatistica.html"><li>Estatístitca</li></a>
+              <a href="equa.html"><li>Equação do 2º grau</li></a>
+              <a href="areaspla.html"><li>Áreas Planas</li></a>
+          </ul>
+      </header>
+
+    <script>
+        function criarMatriz() {
+      var numLinhas = parseInt(document.getElementById("numLinhas").value);
+      var numColunas = parseInt(document.getElementById("numColunas").value);
+
+      var matriz = [];
+
+      for (var i = 0; i < numLinhas; i++) {
+        var linha = [];
+        for (var j = 0; j < numColunas; j++) {
+          var elemento = Math.floor(Math.random() * 100) + 1; // Preenche com números inteiros de 1 a 100
+          linha.push(elemento);
+        }
+        matriz.push(linha);
+      }
+
+      exibirMatriz(matriz);
+    }
+
+    function exibirMatriz(matriz) {
+      var resultado = document.getElementById("resultado");
+      resultado.innerHTML = "";
+
+      for (var i = 0; i < matriz.length; i++) {
+        var linha = matriz[i];
+        var linhaHTML = "<p>";
+        for (var j = 0; j < linha.length; j++) {
+          linhaHTML += linha[j] + " ";
+        }
+        linhaHTML += "</p>";
+        resultado.innerHTML += linhaHTML;
+      }
+    }
+    </script>
+    <div class="container">
+      <a href="index.html" id="link">Home</a> <br>
+    
+      <br>
+    A matriz é uma representação de dados, geralmente numéricos, divididos por linhas e colunas. Uma matriz é representada da forma Amxn.  Assim, temos a matriz A, que possui m linhas e n colunas. A matriz M3x2, por exemplo, possui três linhas e duas colunas. A matriz contém termos representados por aij, em que i é a linha que o termo ocupa e j é a coluna que o termo ocupa.
+    <br>
+    Existem casos especiais de matriz, como a matriz linha, a matriz coluna, a matriz quadrada, a matriz oposta e a matriz identidade. Podemos realizar operações importantes com as matrizes, como adição, subtração e multiplicação. Na informática, matrizes são essenciais para o desenvolvimento da programação. A matriz é utilizada para facilitar o trabalho com dados numéricos, separando determinadas informações de tabelas por linhas e colunas.
+   
+
+    <div id="image">
+     <img src="img/kisspng-diagonal-matrix-diagonal-matrix-macierz-skalarna-t-5bea3075c94b02.7277953915420744858245.png" alt="matriz" width="200px" height="200px" >
+    </div>
+
+    <br>
+    Podemos representar genericamente os elementos de uma matriz, isto é, podemos escrever esse elemento utilizando uma representação matemática. O elemento genérico será representado por letras minúsculas (a, b, c…), e, assim como na representação de matrizes, ele também possui índice que indica sua localização. O primeiro número indica a linha em que o elemento está, e o segundo número indica a coluna na qual ele se localiza."
+    <br>
+
+    <br> <div id="image">
+    <img src="img/matriz.png" alt="">
+     </div>
+
+    <br> "O conjunto das matrizes possui as operações de adição e multiplicação muito bem definidas, isto é, sempre que operamos duas ou mais matrizes, o resultado da operação ainda pertence ao conjunto das matrizes. No entanto, e a operação de subtração? Essa operação entendemos como sendo a inversa da adição (matriz oposta), que também está muito bem definida.
+    <br>
+    Antes de definirmos as operações, vamos entender as ideias de elemento correspondente e igualdade de matrizes. Elementos correspondentes são aqueles que ocupam a mesma posição em diferentes matrizes, ou seja, que estão localizados na mesma linha e coluna. Obviamente as matrizes precisam ser de mesma ordem para que existam elementos correspondentes. "
+    
+    <br> <p>
+        Aqui está nosso sistema de criação de matriz:
+      </p>
+
+<div class="h1">
+    <h1>Criação de Matriz</h1>
+    </div>
+    <div class="input">
+    <div class="matriz">
+    <label for="numLinhas">Número de Linhas:</label>
+    <input type="number" id="numLinhas">
+    </div>
+    <br>
+    
+    <div class="input">
+    <label for="numColunas">Número de Colunas:</label>
+    <input type="number" id="numColunas">
+    </div>
+
+    <div id="btn">
+    <button id="botao" onclick="criarMatriz()">Criar Matriz</button>
+    </div>
+    <br>
+    <div id="resultado">
+
+    </div>
+</body>
+</html>
